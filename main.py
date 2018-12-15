@@ -1,12 +1,14 @@
+# Copyright (c) 2018 saadlalam
+#
+# -*- coding:utf-8 -*-
+# @Script: main.py
+# @Author: saadlalam
+# @Email: saad.lalaoui.lamdegheri@gmail.com
+# @Description: a function for finding differencies between 2 urls - inspired by google/url_diff.
+
 
 from urllib.parse import urlparse, parse_qs
 import json
-
-
-url1 = "http://www.abc.com/?x=6&z=4&h=66&d=ss"
-
-url2 = "http://www.abc.com/?x=62&z=11&y=14&c=hi&h=49"
-
 
 def spot_difference(url1, url2):
     u1 =parse_qs((urlparse(url1)).query)
@@ -23,5 +25,10 @@ def spot_difference(url1, url2):
     return json.dumps(schema, indent=4, sort_keys=True)
 
 
+
+# Example : 
+url1 = "http://www.abc.com/?x=6&z=4&h=66&d=ss"
+
+url2 = "http://www.abc.com/?x=62&z=11&y=14&c=hi&h=49"
 
 print(spot_difference(url1,url2))
